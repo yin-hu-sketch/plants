@@ -1,6 +1,7 @@
 services:
   - type: web
     name: plants-app
+    runtime: dotnet
     buildCommand: dotnet publish -c Release -o out
     startCommand: dotnet out/plants.dll
     plan: free
@@ -9,4 +10,4 @@ services:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
       - key: CONNECTION_STRINGS__DEFAULTCONNECTION
-        value: "Server=DESKTOP-39EDKOS,1433;Database=FlowerShop;User Id=natsy;Password=root;"
+        value: "Server=DESKTOP-39EDKOS,1433;Database=FlowerShop;User Id=natsy;Password=root;TrustServerCertificate=True;MultipleActiveResultSets=true;"
