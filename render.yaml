@@ -1,7 +1,7 @@
 services:
   - type: web
     name: plants-app
-    runtime: dotnet
+    runtime: aspnet 
     buildCommand: dotnet publish -c Release -o out
     startCommand: dotnet out/plants.dll
     plan: free
