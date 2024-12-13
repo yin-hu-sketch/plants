@@ -5,3 +5,8 @@ services:
     startCommand: dotnet out/plants.dll
     plan: free
     region: oregon
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: CONNECTION_STRINGS__DEFAULTCONNECTION
+        value: "Server=<your_server>;Database=<your_database>;User Id=<your_user>;Password=<your_password>;"
