@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: plants-app
+    env: dotnet
+    buildCommand: dotnet publish -c Release -o out
+    startCommand: dotnet out/plants.dll
+    plan: free
+    region: oregon
