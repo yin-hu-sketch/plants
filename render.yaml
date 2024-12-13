@@ -1,12 +1,22 @@
 services:
   - type: web
-    name: plants-app
-    buildCommand: dotnet publish -c Release -o out
-    startCommand: dotnet out/plants.dll
-    plan: free
-    region: oregon
+    name: plants-webapp
+    env: dotnet
+    plan: starter
+    buildCommand: "dotnet build"
+    startCommand: "dotnet Plants.dll --urls=http://0.0.0.0:5000"
+    runtime: "dotnet-core-7.0"
+    disk:
+      - name: data
+        mountPath: /var/plants-data
+        sizeGB: 1
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
-        value: Production
-      - key: CONNECTION_STRINGS__DEFAULTCONNECTION
-        value: "Server=DESKTOP-39EDKOS,1433;Database=FlowerShop;User Id=natsy;Password=root;TrustServerCertificate=True;MultipleActiveResultSets=true;"
+        value: "Production"
+      - key: ConnectionStrings__DefaultConnection
+        value: "Data Source=DESKTOP-39EDKOS,1433;Initial Catalog=FlowerShop;Persist Security Info=True;User ID=natsy;Password=root;Trusted_Connection=True;TrustServerCertificate=True;"
+      - key: DOTNET_SYSTEM_GLOBALIZATION_INVARIANT
+        value: "true"
+    healthCheckPath: "/" 
+    regions:
+      - oregon
