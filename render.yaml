@@ -9,4 +9,4 @@ services:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
       - key: CONNECTION_STRINGS__DEFAULTCONNECTION
-        value: "Server=<your_server>;Database=<your_database>;User Id=<your_user>;Password=<your_password>;"
+        value: "Server=DESKTOP-39EDKOS,1433;Database=FlowerShop;User Id=natsy;Password=root;"
