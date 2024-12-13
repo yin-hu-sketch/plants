@@ -2,7 +2,7 @@ services:
   - type: web
     name: plants-app
     buildCommand: dotnet publish -c Release -o out
-    startCommand: dotnet out/plants.dll
+    startCommand: dotnet out/plants.sln
     plan: free
     region: oregon
 
