@@ -5,7 +5,7 @@ services:
     plan: starter
     buildCommand: "dotnet build"
     startCommand: "dotnet Plants.dll --urls=http://0.0.0.0:5000"
-    runtime: "dotnet-core-7.0"
+    runtime: "dotnet-core-8.0"
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: "Production"
