@@ -6,17 +6,11 @@ services:
     buildCommand: "dotnet build"
     startCommand: "dotnet Plants.dll --urls=http://0.0.0.0:5000"
     runtime: "dotnet-core-7.0"
-    disk:
-      - name: data
-        mountPath: /var/plants-data
-        sizeGB: 1
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: "Production"
       - key: ConnectionStrings__DefaultConnection
-        value: "Data Source=DESKTOP-39EDKOS,1433;Initial Catalog=FlowerShop;Persist Security Info=True;User ID=natsy;Password=root;Trusted_Connection=True;TrustServerCertificate=True;"
+        value: "Data Source=DESKTOP-39EDKOSб 1433;Initial Catalog=FlowerShop;Persist Security Info=True;User ID=natsy;Password=root;Trusted_Connection=True;TrustServerCertificate=True;"
       - key: DOTNET_SYSTEM_GLOBALIZATION_INVARIANT
         value: "true"
-    healthCheckPath: "/" 
-    regions:
-      - oregon
+    healthCheckPath: "/"
